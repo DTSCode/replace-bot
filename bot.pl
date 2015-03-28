@@ -6,7 +6,7 @@ use IO::Socket;
 my $server = "irc.freenode.net";
 my $nick = "replace-bot";
 my $login = "replace-bot";
-my $channel = "####c++,##coding,#cplusplus.com,#learnmath,#learnprogramming,#lpmc,#nim,#nim-offtopic";
+my $channel = "channels go here";
 my $sock = new IO::Socket::INET($server, 6667, 'tcp') or die "Can't Connect.\n";
 
 print $sock "NICK $nick\r\n";
@@ -22,7 +22,6 @@ while(my $input = <$sock>) {
     }
 }
 
-print $sock "NICKSERV IDENTIFY replacinator\r\n";
 print $sock "JOIN $channel\r\n";
 
 my $previnput = "";
